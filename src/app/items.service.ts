@@ -1,0 +1,34 @@
+import { ItemDetails } from "./shared/items.model";
+import { EventEmitter, Injectable } from "@angular/core";
+
+@Injectable()
+export class ListItemService{
+    itemSelected = new EventEmitter<ItemDetails>();
+
+    private itemList : ItemDetails[]=[
+        new ItemDetails('Taj Mahal', "Agra",
+        "The Taj Mahal in Agra is an immense mausoleum of white marble, built between 1632 and 1653 by order of the Mughal emperor Shah Jahan in memory of his favorite wife. Called “a teardrop on the cheek of eternity” it is one of the masterpieces of Mughal architecture, and one of the great tourist attractions in India. Besides the white domed marble mausoleum the Taj Mahal includes several other beautiful buildings, reflecting pools, and extensive ornamental gardens with flowering trees and bushes.",
+        "https://www.touropia.com/gfx/d/famous-mausoleums-in-the-world/taj_mahal.jpg?v=729a33c8078fa3629fdd252d758ebe77"),
+        new ItemDetails('Varanasi', 'Varanasi', 
+        'Situated on the banks of the River Ganges, Varanasi is sacred to Hindus, Buddhists and Jains and also one of the oldest continuously inhabited cities in the world. In many ways Varanasi epitomizes the very best and worst aspects of India, and it can be a little overwhelming. The scene of pilgrims doing their devotions in the River Ganges at sunrise set against the backdrop of the centuries old temples is probably one of the most impressive sights in the world.',
+        'https://www.touropia.com/gfx/d/tourist-attractions-in-india/varanasi.jpg?v=28542d5f36985df7f729a36f5e5237b7'),
+        new ItemDetails('Ellora Caves','', 'Cave art is taken to new heights at Ellora Caves, one of the largest monastery-temple cave complexes in the world cut from rock. Ellora has 100 caves, though only 34 are open to the public. The largest single monolithic rock excavation is found at the Kailasa Temple, which covers an area double the size of Parthenon in Athens Constructed between the seventh and ninth centuries, the caves are devoted to Hindu, Budhist and Jainism deities.','https://www.touropia.com/gfx/d/rock-cut-tombs-and-temples/ellora_caves.jpg?v=ad68c7009770dd3b67dcc3c18e6916dd'),
+        new ItemDetails('Palolem','Goa','Palolem is the most southerly of Goa’s developed beaches and also one of the most beautiful. It is a natural bay surrounded by lofty headlands on either sides, resulting in a calm, idyllic sea with a gently sloping bed. For those who believe a beach cannot be paradise without a decent selection of cheap restaurants and good hotels, a dose of nightlife and plenty of like-minded people Palolem is the place to be.','https://www.touropia.com/gfx/d/tourist-attractions-in-india/palolem.jpg?v=7003334874b93c764f0f7a27aa6d9f44'),
+        new ItemDetails('Kerala Backwaters','Kerala','The Kerala backwaters are a chain of lagoons and lakes lying parallel to the Arabian Sea coast in the Kerala state. The Kerala backwaters are home to many unique species of aquatic life including crabs, frogs and mudskippers, water birds and animals such as otters and turtles. Today, houseboat tourism is the most popular tourist activity in the backwaters, with several large Kettuvallams (traditional rice boats, now converted into floating hotels)ply the waterways.','https://www.touropia.com/gfx/d/important-wetlands-in-the-world/kerala_backwaters.jpg?v=1'),
+        new ItemDetails('Ajanta Caves','','The Ajanta Caves are rock-cut cave monuments dating from the 2th century BC. The magnificent Ajanta caves were abandoned around 650 AD and forgotten until 1819, when a British hunting party stumbled upon them. Their isolation contributed to the fine state of preservation in which some of their paintings remain to this day. The well preserved murals depict everything from battlefields to sailing ships, city streets and teeming animal-filled forests to snow-capped mountains. The city of Aurangabad is the gateway to the Ajanta Caves as well as the equally spectacular Ellora Caves.','https://www.touropia.com/gfx/d/rock-cut-tombs-and-temples/ajanta_caves.jpg?v=1'),
+        new ItemDetails('Mysore Palace','Karnataka','Visitors to Mysore Palace are in for an awesome experience at sthe second most popular tourist attraction in India. The seven palaces that make up the Mysore Palace complex are nothing short of spectacular. The Wodeyars ruled Mysore from 1399 to 1950. Their original palace was built in 1399, and the current palace was completed in 1912. The new palace is an amalgamation of Muslim, Hindu, Gothic and Raiput styles. Three stories high, it has deep pink marble domes and an ivory tower. The palace hosts an annual arts and culture festival, Dashara annually','https://www.touropia.com/gfx/d/beautiful-palaces-in-the-world/mysore_palace.jpg?v=1'),
+        new ItemDetails('Ranakpur','','Ranakpur Temple is an imposing and highly decorative Jain temple that is famous for its art and architecture, considered some of the world’s best. Built in the 15th century, it took more than 50 years to construct the temple. One of the largest temples in India, Ranakpur Temple has 29 halls and 80 domes, but is really famous for its 1,444 pillars, of which each one is unique. Statues of deities top each dome. Extremely intricate carvings highlight the interior.','https://www.touropia.com/gfx/d/amazing-jain-temples/ranakpur_temple.jpg?v=8142ed90fc9ebdd44350efbe25c9779e'),
+        new ItemDetails('Havelock Island','Andaman Island','Ecotourism is encouraged at Havelock Island, the largest island in Ritchie’s Archipelago in the Andaman Islands. Though not as crowded as other islands in Asia, the number of visitors to Havelock Island is on the rise due to its great beaches, casual atmosphere, snorkeling and scuba diving opportunities. The best time to visit is mid-January to mid-May, when the weather is sunny with calmer seas. Redhanagar Beach is considered one of the best beaches in Asia','https://www.touropia.com/gfx/d/tourist-attractions-in-india/havelock_island.jpg?v=1'),
+        new ItemDetails('Thikse Monastary','Ladakh','Travelers who’ve been to Tibet may think they’re seeing things when they look at Thikse Monastery. That’s because the 12-story building resembles the Potala Palace in Lhasa, only this Buddhist monastery is located in Ladakh, India. Like its Tibetan inspiration, it’s located at a high elevation: 3,600 meters (11,800 feet). Ladakh’s largest monastery also contains the tallest statue, a 14-meter (45-foot) high depiction of Maitreya, housed in a temple commemorating the visit of the Dalai Lama in 1970. Important Buddhist art, such as stupas and wall paintings, can be found here.','https://www.touropia.com/gfx/d/amazing-buddhist-monasteries/thikse_monastery.jpg?v=1'),
+    ]
+
+    getItemList(){
+        return this.itemList;
+    }
+
+    getItemDetails( index: number){
+        return this.itemList[index]
+    }
+
+}
+    
